@@ -1,6 +1,6 @@
 
 """
-Archivo: Clientes.py
+Archivo: clientes.py
 Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
 Este módulo contiene la clase Cliente, encargada
