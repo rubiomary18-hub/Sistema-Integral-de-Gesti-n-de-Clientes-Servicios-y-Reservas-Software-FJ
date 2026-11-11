@@ -49,16 +49,13 @@ class Cliente(Entidad):
     def nombre(self, valor):
 
         if not isinstance(valor, str):
-            raise DatosInvalidosError(
-                "El nombre del cliente debe ser texto.")
+            raise DatosInvalidosError("El nombre del cliente debe ser texto.")
 
         valor = valor.strip()
 
         if len(valor) < 3 or not re.fullmatch(
             r"[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]+", valor):
-            raise DatosInvalidosError(
-                "El nombre debe tener al menos 3 caracteres "
-                "y contener únicamente letras y espacios.")
+            raise DatosInvalidosError("El nombre debe tener al menos 3 caracteres ""y contener únicamente letras y espacios.")
 
         self._nombre = valor
 
@@ -74,16 +71,14 @@ class Cliente(Entidad):
     def correo(self, valor):
 
         if not isinstance(valor, str):
-            raise DatosInvalidosError(
-                "El correo electrónico debe ser texto.")
+            raise DatosInvalidosError("El correo electrónico debe ser texto.")
 
         valor = valor.strip().lower()
 
         patron = r"^[\w.+-]+@[\w-]+\.[A-Za-z]{2,}$"
 
         if not re.fullmatch(patron, valor):
-            raise DatosInvalidosError(
-                "El formato del correo electrónico no es válido.)
+            raise DatosInvalidosError("El formato del correo electrónico no es válido.)
 
         self._correo = valor
 
@@ -99,8 +94,7 @@ class Cliente(Entidad):
     def telefono(self, valor):
 
         if not isinstance(valor, str):
-            raise DatosInvalidosError(
-                "El teléfono debe ingresarse como texto.")
+            raise DatosInvalidosError("El teléfono debe ingresarse como texto.")
 
         valor = valor.strip()
 
@@ -108,15 +102,13 @@ class Cliente(Entidad):
         patron = r"^\+?[0-9\s-]{7,20}$"
 
         if not re.fullmatch(patron, valor):
-            raise DatosInvalidosError(
-                "El número telefónico no tiene un formato válido.")
+            raise DatosInvalidosError("El número telefónico no tiene un formato válido.")
 
         # Verificamos que contenga entre 7 y 15 dígitos.
         cantidad_digitos = sum(caracter.isdigit() for caracter in valor)
 
         if not 7 <= cantidad_digitos <= 15:
-            raise DatosInvalidosError(
-                "El teléfono debe contener entre 7 y 15 dígitos.")
+            raise DatosInvalidosError("El teléfono debe contener entre 7 y 15 dígitos.")
 
         self._telefono = valor
 
@@ -132,14 +124,12 @@ class Cliente(Entidad):
     def direccion(self, valor):
 
         if not isinstance(valor, str):
-            raise DatosInvalidosError(
-                "La dirección debe ingresarse como texto.")
+            raise DatosInvalidosError("La dirección debe ingresarse como texto.")
 
         valor = valor.strip()
 
         if len(valor) < 5:
-            raise DatosInvalidosError(
-                "La dirección debe contener al menos 5 caracteres.)
+            raise DatosInvalidosError("La dirección debe contener al menos 5 caracteres.)
 
         self._direccion = valor
 
@@ -152,10 +142,4 @@ class Cliente(Entidad):
         Devuelve la información general del cliente.
         """
 
-        return (
-            f"ID: {self.id_entidad}\n"
-            f"Nombre: {self.nombre}\n"
-            f"Correo: {self.correo}\n"
-            f"Teléfono: {self.telefono}\n"
-            f"Dirección: {self.direccion}"
-        )
+        return (f"ID: {self.id_entidad}\n"f"Nombre: {self.nombre}\n"f"Correo: {self.correo}\n"f"Teléfono: {self.telefono}\nf"Dirección: {self.direccion}")
