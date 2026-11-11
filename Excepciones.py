@@ -34,5 +34,5 @@ class ParametroFaltanteError(SistemaError):
     pass
 
 class ErrorCalculoCosto(SistemaError):
-    """Se creaa cuando ocurre un error al calcular un costo."""
+    """Se crea cuando ocurre un error al calcular un costo."""
     pass
