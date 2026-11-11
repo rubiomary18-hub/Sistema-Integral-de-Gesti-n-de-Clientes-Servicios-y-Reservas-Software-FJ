@@ -1,6 +1,6 @@
 
 """
-Archivo: excepciones.py
+Archivo: Excepciones.py
 Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
 Contiene las excepciones que permiten controlar los errores del sistema.
