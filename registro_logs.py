@@ -3,8 +3,7 @@
 Archivo: registro_logs.py
 Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
-Este módulo permite registrar los eventos y errores
-que ocurren durante la ejecución del sistema.
+Este módulo permite registrar los eventos y errores que ocurren durante la ejecución del sistema.
 """
 
 # Importamos logging para administrar los registros.
@@ -68,7 +67,6 @@ def registrar_evento(mensaje):
     """
 
     logger.info(mensaje)
-
 
 # -----------------------------------------
 # REGISTRAR ERRORES
