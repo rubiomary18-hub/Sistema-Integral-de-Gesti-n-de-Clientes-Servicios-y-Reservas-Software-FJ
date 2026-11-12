@@ -3,8 +3,7 @@
 Archivo: reservas.py
 Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
-Este módulo contiene la clase Reserva, encargada de
-administrar las reservas de clientes y servicios.
+Este módulo contiene la clase reserva, encargada de administrar las reservas de clientes y servicios.
 """
 
 # Importamos la clase Entidad.
@@ -148,9 +147,10 @@ class Reserva(Entidad):
 
             return self._costo_total
 
+        
         except (ErrorCalculoCosto, DatosInvalidosError) as error:
-            raise ReservaInvalidaError("No fue posible procesar la reserva debido a un error en el cálculo del costo.")
-              from error
+            raise ReservaInvalidaError("No fue posible procesar la reserva debido a un error en el cálculo del costo.") from error
+
 
     # -----------------------------------------
     # MOSTRAR INFORMACIÓN
