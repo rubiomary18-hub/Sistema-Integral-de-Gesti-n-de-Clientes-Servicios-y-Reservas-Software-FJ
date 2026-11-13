@@ -1,7 +1,6 @@
 
 """
 Archivo: sistema.py
-Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
 Este módulo administra los clientes, servicios y reservas mediante listas y controla las operaciones del sistema.
 """
