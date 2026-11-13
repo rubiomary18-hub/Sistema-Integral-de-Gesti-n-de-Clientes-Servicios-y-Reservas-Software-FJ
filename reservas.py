@@ -1,7 +1,6 @@
 
 """
 Archivo: reservas.py
-Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
 Este módulo contiene la clase reserva, encargada de administrar las reservas de clientes y servicios.
 """
