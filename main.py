@@ -1,7 +1,6 @@
 
 """
 Archivo: main.py
-Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
 Este módulo ejecuta el programa principal y realiza operaciones de prueba para comprobar su funcionamiento.
 """
