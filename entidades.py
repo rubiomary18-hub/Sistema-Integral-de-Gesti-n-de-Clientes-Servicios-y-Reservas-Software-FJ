@@ -1,11 +1,8 @@
 
 """
 Archivo: Entidades.py
-Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
-Este módulo define la clase abstracta Entidad,
-que sirve como estructura general para las clases
-que representan elementos del sistema.
+Este módulo define la clase abstracta Entidad,que sirve como estructura general para las clases que representan elementos del sistema.
 """
 
 # Importamos ABC y abstractmethod para crear clases abstractas.
