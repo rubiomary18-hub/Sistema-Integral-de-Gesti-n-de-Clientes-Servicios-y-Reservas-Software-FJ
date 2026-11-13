@@ -26,7 +26,7 @@ class Servicio(Entidad, ABC):
         if not isinstance(nombre, str) or not nombre.strip():
             raise DatosInvalidosError( "El nombre del servicio no puede estar vacío.")
 
-        if (isinstance(precio_base, bool) or not isinstance(precio_base, (int, float)) or precio_base <= 0):
+        if (isinstance(precio_base, bool) or not isinstance(precio_base, (int, float)) or not math.isfinite(precio_base) or precio_base <= 0):
             raise DatosInvalidosError("El precio base debe ser un número mayor que cero.")
 
         self._nombre = nombre.strip()
