@@ -1,10 +1,8 @@
 
 """
 Archivo: clientes.py
-Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
-Este módulo contiene la clase Cliente, encargada
-de registrar y validar la información de los clientes.
+Este módulo contiene la clase Cliente, encargada de registrar y validar la información de los clientes.
 """
 
 # Importamos la clase abstracta Entidad.
