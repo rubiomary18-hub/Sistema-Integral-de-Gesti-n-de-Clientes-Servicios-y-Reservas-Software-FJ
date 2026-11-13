@@ -17,8 +17,7 @@ import re
 
 class Cliente(Entidad):
     """
-    Clase que representa a un cliente del sistema Software FJ.
-    Hereda de Entidad y aplica encapsulamiento y validaciones.
+    Clase que representa a un cliente del sistema Software FJ ,Hereda de Entidad y aplica encapsulamiento y validaciones.
     """
 
     def __init__(self, id_cliente, nombre, correo, telefono, direccion):
@@ -53,7 +52,7 @@ class Cliente(Entidad):
 
         if len(valor) < 3 or not re.fullmatch(
             r"[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]+", valor):
-            raise DatosInvalidosError("El nombre debe tener al menos 3 caracteres ""y contener únicamente letras y espacios.")
+            raise DatosInvalidosError("El nombre debe tener al menos 3 caracteres y contener únicamente letras y espacios.")
 
         self._nombre = valor
 
@@ -76,7 +75,7 @@ class Cliente(Entidad):
         patron = r"^[\w.+-]+@[\w-]+\.[A-Za-z]{2,}$"
 
         if not re.fullmatch(patron, valor):
-            raise DatosInvalidosError("El formato del correo electrónico no es válido.)
+            raise DatosInvalidosError("El formato del correo electrónico no es válido.")
 
         self._correo = valor
 
@@ -127,7 +126,7 @@ class Cliente(Entidad):
         valor = valor.strip()
 
         if len(valor) < 5:
-            raise DatosInvalidosError("La dirección debe contener al menos 5 caracteres.)
+            raise DatosInvalidosError("La dirección debe contener al menos 5 caracteres.")
 
         self._direccion = valor
 
@@ -140,4 +139,10 @@ class Cliente(Entidad):
         Devuelve la información general del cliente.
         """
 
-        return (f"ID: {self.id_entidad}\n"f"Nombre: {self.nombre}\n"f"Correo: {self.correo}\n"f"Teléfono: {self.telefono}\nf"Dirección: {self.direccion}")
+        
+    def mostrar_informacion(self):
+        """
+        Devuelve la información general del cliente.
+        """
+
+        return (f"ID: {self.id_entidad}\n"f"Nombre: {self.nombre}\n"f"Correo: {self.correo}\n"f"Teléfono: {self.telefono}\n"f"Dirección: {self.direccion}")
