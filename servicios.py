@@ -1,10 +1,8 @@
 
 """
 Archivo: servicios.py
-Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
-Este módulo define la clase abstracta Servicio y sus
-tres tipos de servicios especializados.
+Este módulo define la clase abstracta Servicio y sus tres tipos de servicios especializados.
 """
 
 # Importamos ABC y abstractmethod para crear clases abstractas.
