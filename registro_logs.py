@@ -1,7 +1,6 @@
 
 """
 Archivo: registro_logs.py
-Proyecto: Sistema Integral de Gestión de Clientes,Servicios y Reservas - Software FJ.
 
 Este módulo permite registrar los eventos y errores que ocurren durante la ejecución del sistema.
 """
