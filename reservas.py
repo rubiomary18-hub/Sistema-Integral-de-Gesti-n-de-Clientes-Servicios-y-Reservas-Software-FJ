@@ -20,6 +20,8 @@ from excepciones import (DatosInvalidosError,ClienteNoEncontradoError,ServicioNo
 # Importamos math para validar cantidades numéricas.
 import math
 
+# Importamos las funciones para registrar eventos y errores.
+from registro_logs import registrar_evento, registrar_error
 
 class Reserva(Entidad):
     """
@@ -155,11 +157,11 @@ class Reserva(Entidad):
     # MOSTRAR INFORMACIÓN
     # -----------------------------------------
 
-    def mostrar_informacion(self):
+        def mostrar_informacion(self):
         """
         Devuelve los datos generales de la reserva.
         """
 
-        costo = (f"${self._costo_total:,.2f}"if self._costo_total is not None else "Pendiente de cálculo")
+        costo = f"${self._costo_total:,.2f}" if self._costo_total is not None else "Pendiente de cálculo"
 
-        return (f"ID de reserva: {self.id_entidad}\n"f"Cliente: {self._cliente.nombre}\n"f"Servicio: {self._servicio.nombre}\n"f"Duración: {self._duracion}\n"f"Estado: {self._estado}\n"f"Costo total: {costo}")
+        return f"ID de reserva: {self.id_entidad}\nCliente: {self._cliente.nombre}\nServicio: {self._servicio.nombre}\nDuración: {self._duracion}\nEstado: {self._estado}\nCosto total: {costo}"
