@@ -95,6 +95,8 @@ class Reserva(Entidad):
     def costo_total(self):
         return self._costo_total
 
+
+
     # -----------------------------------------
     # CONFIRMAR RESERVA
     # -----------------------------------------
@@ -104,12 +106,18 @@ class Reserva(Entidad):
         Confirma una reserva que se encuentra pendiente.
         """
 
-        if self._estado != "Pendiente":
-            raise OperacionNoPermitidaError("Solamente se pueden confirmar reservas pendientes.")
+        try:
+            if self._estado != "Pendiente":
+                raise OperacionNoPermitidaError("Solamente se pueden confirmar reservas pendientes.")
 
-        self._estado = "Confirmada"
+            self._estado = "Confirmada"
+            registrar_evento(f"Reserva {self.id_entidad} confirmada correctamente.")
 
-        return "La reserva ha sido confirmada correctamente."
+            return "La reserva ha sido confirmada correctamente."
+
+        except Exception as error:
+            registrar_error("Error al confirmar la reserva", error)
+            raise
 
     # -----------------------------------------
     # CANCELAR RESERVA
@@ -120,12 +128,18 @@ class Reserva(Entidad):
         Cancela una reserva pendiente o confirmada.
         """
 
-        if self._estado not in ("Pendiente", "Confirmada"):
-            raise OperacionNoPermitidaError("No se puede cancelar una reserva que ya fue procesada o cancelada.")
+        try:
+            if self._estado not in ("Pendiente", "Confirmada"):
+                raise OperacionNoPermitidaError("No se puede cancelar una reserva que ya fue procesada o cancelada.")
 
-        self._estado = "Cancelada"
+            self._estado = "Cancelada"
+            registrar_evento(f"Reserva {self.id_entidad} cancelada correctamente.")
 
-        return "La reserva ha sido cancelada correctamente."
+            return "La reserva ha sido cancelada correctamente."
+
+        except Exception as error:
+            registrar_error("Error al cancelar la reserva", error)
+            raise
 
     # -----------------------------------------
     # PROCESAR RESERVA
@@ -159,7 +173,7 @@ class Reserva(Entidad):
     # MOSTRAR INFORMACIÓN
     # -----------------------------------------
 
-        def mostrar_informacion(self):
+    def mostrar_informacion(self):
         """
         Devuelve los datos generales de la reserva.
         """
@@ -167,3 +181,5 @@ class Reserva(Entidad):
         costo = f"${self._costo_total:,.2f}" if self._costo_total is not None else "Pendiente de cálculo"
 
         return f"ID de reserva: {self.id_entidad}\nCliente: {self._cliente.nombre}\nServicio: {self._servicio.nombre}\nDuración: {self._duracion}\nEstado: {self._estado}\nCosto total: {costo}"
+
+
