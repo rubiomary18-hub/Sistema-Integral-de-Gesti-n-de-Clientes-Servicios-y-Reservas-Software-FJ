@@ -77,6 +77,6 @@ def registrar_error(mensaje, error=None):
     """
 
     if error is not None:
-        logger.error(f"{mensaje}: {error}",exc_info=(type(error), error, error.__traceback__))
+        logger.error(f"{mensaje}: {error}", exc_info=(type(error), error, error.__traceback__))
     else:
         logger.error(mensaje)
