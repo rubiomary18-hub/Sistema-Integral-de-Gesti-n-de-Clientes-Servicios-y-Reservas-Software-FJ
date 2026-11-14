@@ -70,39 +70,45 @@ def main():
     # OPERACIONES DE PRUEBA
     # -----------------------------------------
 
-operaciones = [
+    operaciones = [
 
-    ("Registrar cliente María", lambda: sistema.registrar_cliente(Cliente("C001", "María Oviedo", "maria@gmail.com", "3001234567", "Bogotá"))),
+        ("Registrar cliente María", lambda: sistema.registrar_cliente(Cliente("C001", "María Oviedo", "maria@gmail.com", "3001234567", "Bogotá"))),
 
-    ("Registrar cliente Carlos", lambda: sistema.registrar_cliente(Cliente("C002", "Carlos Callejas", "carlos@gmail.com", "3101234567", "Medellín"))),
+        ("Registrar cliente Carlos", lambda: sistema.registrar_cliente(Cliente("C002", "Carlos Callejas", "carlos@gmail.com", "3101234567", "Medellín"))),
 
-    ("Intentar registrar un cliente con correo incorrecto", lambda: sistema.registrar_cliente(Cliente("C003", "Erika Gómez", "correo_incorrecto", "3201234567", "Cali"))),
+        ("Intentar registrar un cliente con correo incorrecto", lambda: sistema.registrar_cliente(Cliente("C003", "Erika Gómez", "correo_incorrecto", "3201234567", "Cali"))),
 
-    ("Intentar registrar un cliente duplicado", lambda: sistema.registrar_cliente(Cliente("C001", "María Oviedo", "otra@gmail.com", "3001234567", "Bogotá"))),
+        ("Intentar registrar un cliente duplicado", lambda: sistema.registrar_cliente(Cliente("C001", "María Oviedo", "otra@gmail.com", "3001234567", "Bogotá"))),
 
-    ("Registrar servicio de reserva de sala", lambda: sistema.registrar_servicio(ReservaSala("S001", "Sala de reuniones", 50000, 20))),
+        ("Registrar servicio de reserva de sala", lambda: sistema.registrar_servicio(ReservaSala("S001", "Sala de reuniones", 50000, 20))),
 
-    ("Registrar servicio de alquiler de equipos", lambda: sistema.registrar_servicio(AlquilerEquipo("S002", "Alquiler de computador", 40000, "Computador"))),
+        ("Registrar servicio de alquiler de equipos", lambda: sistema.registrar_servicio(AlquilerEquipo("S002", "Alquiler de computador", 40000, "Computador"))),
 
-    ("Registrar servicio de asesoría especializada", lambda: sistema.registrar_servicio(AsesoriaEspecializada("S003", "Asesoría tecnológica", 80000, "Sistemas"))),
+        ("Registrar servicio de asesoría especializada", lambda: sistema.registrar_servicio(AsesoriaEspecializada("S003", "Asesoría tecnológica", 80000, "Sistemas"))),
 
-    ("Intentar registrar un servicio con precio incorrecto", lambda: sistema.registrar_servicio(ReservaSala("S004", "Sala inválida", -50000, 15))),
+        ("Intentar registrar un servicio con precio incorrecto", lambda: sistema.registrar_servicio(ReservaSala("S004", "Sala inválida", -50000, 15))),
 
-    ("Crear una reserva válida", lambda: sistema.crear_reserva("R001", "C001", "S001", 3)),
+        ("Crear una reserva válida", lambda: sistema.crear_reserva("R001", "C001", "S001", 3)),
 
-    ("Crear otra reserva válida", lambda: sistema.crear_reserva("R002", "C002", "S002", 2)),
+        ("Crear otra reserva válida", lambda: sistema.crear_reserva("R002", "C002", "S002", 2)),
 
-    ("Intentar crear una reserva con duración incorrecta", lambda: sistema.crear_reserva("R003", "C001", "S001", -2)),
+        ("Intentar crear una reserva con duración incorrecta", lambda: sistema.crear_reserva("R003", "C001", "S001", -2)),
 
-    ("Confirmar la primera reserva", lambda: sistema.buscar_reserva("R001").confirmar()),
+        ("Confirmar la primera reserva", lambda: sistema.buscar_reserva("R001").confirmar()),
 
-    ("Procesar la primera reserva y calcular su costo", lambda: sistema.buscar_reserva("R001").procesar()),
+        ("Procesar la primera reserva y calcular su costo", lambda: sistema.buscar_reserva("R001").procesar()),
 
-    ("Cancelar la segunda reserva", lambda: sistema.buscar_reserva("R002").cancelar()),
+        ("Cancelar la segunda reserva", lambda: sistema.buscar_reserva("R002").cancelar()),
 
-    ("Intentar procesar una reserva cancelada", lambda: sistema.buscar_reserva("R002").procesar()),
+        ("Intentar procesar una reserva cancelada", lambda: sistema.buscar_reserva("R002").procesar()),
 
-    ("Buscar un cliente inexistente", lambda: sistema.buscar_cliente(id_cliente="C999"))
+        ("Buscar un cliente inexistente", lambda: sistema.buscar_cliente(id_cliente="C999"))
+
+        
+        ("Buscar cliente por correo electrónico", lambda: sistema.buscar_cliente(correo="maria@gmail.com")),
+
+        ("Buscar servicio por nombre", lambda: sistema.buscar_servicio(nombre="Sala de reuniones"))
+
 ]
 
     # -----------------------------------------
