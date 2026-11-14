@@ -133,25 +133,27 @@ class Reserva(Entidad):
 
     def procesar(self):
         """
-        Procesa una reserva confirmada y calcula su costo total.
+        Procesa una reserva confirmada y calcula su costo.
         """
 
-        if self._estado != "Confirmada":
-            raise OperacionNoPermitidaError("Solamente se pueden procesar reservas confirmadas.")
-
         try:
-            # Calculamos el costo según el tipo de servicio.
-            self._costo_total = self._servicio.calcular_costo(self._duracion)
+            if self._estado != "Confirmada":
+                raise OperacionNoPermitidaError("Solamente se pueden procesar reservas confirmadas.")
 
-            # Actualizamos el estado cuando el cálculo es exitoso.
-            self._estado = "Procesada"
+            try:
+                self._costo_total = self._servicio.calcular_costo(self._duracion)
+                self._estado = "Procesada"
 
-            return self._costo_total
+                registrar_evento(f"Reserva {self.id_entidad} procesada correctamente. Costo total: ${self._costo_total:,.2f}.")
 
-        
-        except (ErrorCalculoCosto, DatosInvalidosError) as error:
-            raise ReservaInvalidaError("No fue posible procesar la reserva debido a un error en el cálculo del costo.") from error
+                return self._costo_total
 
+            except (ErrorCalculoCosto, DatosInvalidosError) as error:
+                raise ReservaInvalidaError("No fue posible procesar la reserva debido a un error en el cálculo del costo.") from error
+
+        except Exception as error:
+            registrar_error(f"Error al procesar la reserva {self.id_entidad}", error)
+            raise
 
     # -----------------------------------------
     # MOSTRAR INFORMACIÓN
