@@ -66,9 +66,7 @@ class SistemaGestion:
 
     def buscar_cliente(self, id_cliente=None, correo=None):
         """
-        Busca un cliente por identificador o por correo electrónico.
-
-        Permite dos formas de búsqueda mediante parámetros opcionales.
+        Busca un cliente por identificador o por correo electrónico permitiendo dos formas de búsqueda mediante parámetros opcionales.
         """
 
         try:
@@ -77,8 +75,9 @@ class SistemaGestion:
 
             if id_cliente is not None:
                 for cliente in self._clientes:
-                    if cliente.id_entidad == str(id_cliente).strip():
-                        return cliente
+                   if cliente.id_entidad == str(id_cliente).strip():
+    registrar_evento(f"Cliente encontrado: {cliente.id_entidad} - {cliente.nombre}.")
+    return cliente
 
             else:
                 if not isinstance(correo, str) or not correo.strip():
@@ -86,8 +85,8 @@ class SistemaGestion:
 
                 for cliente in self._clientes:
                     if cliente.correo == correo.strip().lower():
-                        return cliente
-
+    registrar_evento(f"Cliente encontrado mediante correo: {cliente.correo}.")
+    return cliente
             raise ClienteNoEncontradoError("No se encontró un cliente con los datos proporcionados.")
 
         except Exception as error:
@@ -136,7 +135,8 @@ class SistemaGestion:
             if id_servicio is not None:
                 for servicio in self._servicios:
                     if servicio.id_entidad == str(id_servicio).strip():
-                        return servicio
+    registrar_evento(f"Servicio encontrado: {servicio.id_entidad} - {servicio.nombre}.")
+    return servicio
 
             else:
                 if not isinstance(nombre, str) or not nombre.strip():
@@ -144,7 +144,8 @@ class SistemaGestion:
 
                 for servicio in self._servicios:
                     if servicio.nombre.lower() == nombre.strip().lower():
-                        return servicio
+    registrar_evento(f"Servicio encontrado mediante nombre: {servicio.nombre}.")
+    return servicio
 
             raise ServicioNoDisponibleError("No se encontró el servicio solicitado.")
 
