@@ -1,9 +1,9 @@
 
-"""
-Archivo: reservas.py
 
-Este módulo contiene la clase reserva, encargada de administrar las reservas de clientes y servicios.
-"""
+#Archivo: reservas.py
+
+#Este módulo contiene la clase reserva, encargada de administrar las reservas de clientes y servicios.
+
 
 # Importamos la clase Entidad.
 from entidades import Entidad
@@ -24,14 +24,14 @@ import math
 from registro_logs import registrar_evento, registrar_error
 
 class Reserva(Entidad):
-    """
-    Clase que representa una reserva dentro del sistema.
-    """
+    
+    #Clase que representa una reserva dentro del sistema.
+    
 
     def __init__(self, id_reserva, cliente, servicio, duracion):
-        """
-        Inicializa una reserva con su cliente, servicio y duración.
-        """
+        
+        #Inicializa una reserva con su cliente, servicio y duración.
+        
 
         # Inicializamos el identificador mediante la clase padre.
         super().__init__(id_reserva)
@@ -64,9 +64,9 @@ class Reserva(Entidad):
 
     @staticmethod
     def _validar_duracion(duracion):
-        """
-        Comprueba que la duración sea un número positivo y válido.
-        """
+        
+        #Comprueba que la duración sea un número positivo y válido.
+        
 
         if isinstance(duracion, bool) or not isinstance(duracion, (int, float)) or not math.isfinite(duracion) or duracion <= 0:
             raise DatosInvalidosError( "La duración debe ser un número positivo y válido.")
@@ -102,9 +102,9 @@ class Reserva(Entidad):
     # -----------------------------------------
 
     def confirmar(self):
-        """
-        Confirma una reserva que se encuentra pendiente.
-        """
+        
+        #Confirma una reserva que se encuentra pendiente.
+        
 
         try:
             if self._estado != "Pendiente":
@@ -124,9 +124,9 @@ class Reserva(Entidad):
     # -----------------------------------------
 
     def cancelar(self):
-        """
-        Cancela una reserva pendiente o confirmada.
-        """
+        
+        #Cancela una reserva pendiente o confirmada.
+        
 
         try:
             if self._estado not in ("Pendiente", "Confirmada"):
@@ -146,9 +146,9 @@ class Reserva(Entidad):
     # -----------------------------------------
 
     def procesar(self):
-        """
-        Procesa una reserva confirmada y calcula su costo.
-        """
+        
+        #Procesa una reserva confirmada y calcula su costo.
+        
 
         try:
             if self._estado != "Confirmada":
@@ -174,9 +174,9 @@ class Reserva(Entidad):
     # -----------------------------------------
 
     def mostrar_informacion(self):
-        """
-        Devuelve los datos generales de la reserva.
-        """
+        
+        #Devuelve los datos generales de la reserva.
+        
 
         costo = f"${self._costo_total:,.2f}" if self._costo_total is not None else "Pendiente de cálculo"
 
