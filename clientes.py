@@ -1,9 +1,8 @@
 
-"""
-Archivo: clientes.py
+#Archivo: clientes.py
 
-Este módulo contiene la clase Cliente, encargada de registrar y validar la información de los clientes.
-"""
+#Este módulo contiene la clase Cliente, encargada de registrar y validar la información de los clientes.
+
 
 # Importamos la clase abstracta Entidad.
 from entidades import Entidad
@@ -16,14 +15,14 @@ import re
 
 
 class Cliente(Entidad):
-    """
-    Clase que representa a un cliente del sistema Software FJ ,Hereda de Entidad y aplica encapsulamiento y validaciones.
-    """
+    
+    #Clase que representa a un cliente del sistema Software FJ ,Hereda de Entidad y aplica encapsulamiento y validaciones.
+    
 
     def __init__(self, id_cliente, nombre, correo, telefono, direccion):
-        """
-        Inicializa un cliente con sus datos personales.
-        """
+        
+        #Inicializa un cliente con sus datos personales.
+        
 
         # Inicializamos el identificador mediante la clase padre.
         super().__init__(id_cliente)
@@ -133,16 +132,10 @@ class Cliente(Entidad):
     # -------------------------------
     # MÉTODO PARA MOSTRAR INFORMACIÓN
     # -------------------------------
-
-    def mostrar_informacion(self):
-        """
-        Devuelve la información general del cliente.
-        """
-
         
     def mostrar_informacion(self):
-        """
-        Devuelve la información general del cliente.
-        """
+        
+        #Devuelve la información general del cliente.
+        
 
         return (f"ID: {self.id_entidad}\n"f"Nombre: {self.nombre}\n"f"Correo: {self.correo}\n"f"Teléfono: {self.telefono}\n"f"Dirección: {self.direccion}")
