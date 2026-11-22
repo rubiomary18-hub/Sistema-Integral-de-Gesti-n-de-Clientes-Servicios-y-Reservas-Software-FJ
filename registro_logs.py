@@ -1,9 +1,9 @@
 
-"""
-Archivo: registro_logs.py
 
-Este módulo permite registrar los eventos y errores que ocurren durante la ejecución del sistema.
-"""
+#Archivo: registro_logs.py
+
+#Este módulo permite registrar los eventos y errores que ocurren durante la ejecución del sistema.
+
 
 # Importamos logging para administrar los registros.
 import logging
