@@ -1,9 +1,9 @@
 
-"""
-Archivo: main.py
 
-Este módulo ejecuta el programa principal y realiza operaciones de prueba para comprobar su funcionamiento.
-"""
+#Archivo: main.py
+
+#Este módulo ejecuta el programa principal y realiza operaciones de prueba para comprobar su funcionamiento.
+
 
 # Importamos la clase que administra el sistema.
 from sistema import SistemaGestion
@@ -24,9 +24,9 @@ from registro_logs import registrar_evento, registrar_error
 
 
 def ejecutar_operacion(numero, descripcion, operacion):
-    """
-    Ejecuta una operación y controla los errores para evitar que el programa se detenga.
-    """
+    
+    #Ejecuta una operación y controla los errores para evitar que el programa se detenga.
+    
 
     print(f"\nOPERACIÓN {numero}: {descripcion}")
 
@@ -58,9 +58,9 @@ def ejecutar_operacion(numero, descripcion, operacion):
 # -----------------------------------------
 
 def main():
-    """
-    Inicializa el sistema y ejecuta las operaciones de prueba.
-    """
+    
+    #Inicializa el sistema y ejecuta las operaciones de prueba.
+    
 
     print("=" * 60)
     print("SISTEMA INTEGRAL DE GESTIÓN - SOFTWARE FJ")
