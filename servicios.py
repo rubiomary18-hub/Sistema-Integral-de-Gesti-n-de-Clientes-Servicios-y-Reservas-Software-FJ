@@ -1,9 +1,9 @@
 
-"""
-Archivo: servicios.py
 
-Este módulo define la clase abstracta Servicio y sus tres tipos de servicios especializados.
-"""
+#Archivo: servicios.py
+
+#Este módulo define la clase abstracta Servicio y sus tres tipos de servicios especializados.
+
 
 # Importamos ABC y abstractmethod para crear clases abstractas.
 from abc import ABC, abstractmethod
@@ -17,9 +17,9 @@ from excepciones import DatosInvalidosError, ErrorCalculoCosto
 import math
 
 class Servicio(Entidad, ABC):
-    """
-    Clase abstracta que representa un servicio general.
-    """
+    
+    #Clase abstracta que representa un servicio general.
+    
 
     def __init__(self, id_servicio, nombre, precio_base):
         super().__init__(id_servicio)
@@ -42,25 +42,25 @@ class Servicio(Entidad, ABC):
         return self._precio_base
 
     def _validar_cantidad(self, cantidad):
-        """
-        Comprueba que la cantidad sea un número positivo.
-        """
+        
+        #Comprueba que la cantidad sea un número positivo.
+        
         if ( isinstance(cantidad, bool)or not isinstance(cantidad, (int, float))or cantidad <= 0):
             raise DatosInvalidosError("La cantidad debe ser un número mayor que cero." )
 
     @abstractmethod
     def validar_parametros(self, cantidad):
-        """Valida los parámetros particulares de cada servicio."""
+        #Valida los parámetros particulares de cada servicio.
         pass
 
     @abstractmethod
     def calcular_costo(self, cantidad):
-        """Calcula el costo según el tipo de servicio."""
+        #Calcula el costo según el tipo de servicio.
         pass
 
     @abstractmethod
     def describir_servicio(self):
-        """Devuelve una descripción del servicio."""
+        #Devuelve una descripción del servicio.
         pass
 
 
@@ -69,9 +69,9 @@ class Servicio(Entidad, ABC):
 # --------------------------------------------------
 
 class ReservaSala(Servicio):
-    """
-    Servicio para reservar salas por horas.
-    """
+    
+    #Servicio para reservar salas por horas.
+    
 
     def __init__(self, id_servicio, nombre, precio_base, capacidad):
         super().__init__(id_servicio, nombre, precio_base)
@@ -104,9 +104,9 @@ class ReservaSala(Servicio):
 # --------------------------------------------------
 
 class AlquilerEquipo(Servicio):
-    """
-    Servicio para alquilar equipos por días.
-    """
+    
+    #Servicio para alquilar equipos por días.
+    
 
     def __init__(self, id_servicio, nombre, precio_base, tipo_equipo):
         super().__init__(id_servicio, nombre, precio_base)
@@ -139,9 +139,9 @@ class AlquilerEquipo(Servicio):
 # --------------------------------------------------
 
 class AsesoriaEspecializada(Servicio):
-    """
-    Servicio de asesoría especializada por horas.
-    """
+    
+    #Servicio de asesoría especializada por horas.
+    
 
     def __init__(self, id_servicio, nombre, precio_base, especialidad):
         super().__init__(id_servicio, nombre, precio_base)
