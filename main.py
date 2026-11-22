@@ -22,6 +22,7 @@ from registro_logs import registrar_evento, registrar_error
 # FUNCIÓN PARA EJECUTAR OPERACIONES
 # -----------------------------------------
 
+
 def ejecutar_operacion(numero, descripcion, operacion):
     """
     Ejecuta una operación y controla los errores para evitar que el programa se detenga.
@@ -40,12 +41,16 @@ def ejecutar_operacion(numero, descripcion, operacion):
         print("Operación realizada correctamente.")
 
         if resultado is not None:
-            print(resultado)
+            if hasattr(resultado, "mostrar_informacion"):
+                print(resultado.mostrar_informacion())
+            else:
+                print(resultado)
 
         registrar_evento(f"Operación {numero} exitosa: {descripcion}")
 
     finally:
         print(f"Finalización de la operación {numero}.")
+
 
 
 # -----------------------------------------
@@ -102,7 +107,7 @@ def main():
 
         ("Intentar procesar una reserva cancelada", lambda: sistema.buscar_reserva("R002").procesar()),
 
-        ("Buscar un cliente inexistente", lambda: sistema.buscar_cliente(id_cliente="C999"))
+        ("Buscar un cliente inexistente", lambda: sistema.buscar_cliente(id_cliente="C999")),
 
         
         ("Buscar cliente por correo electrónico", lambda: sistema.buscar_cliente(correo="maria@gmail.com")),

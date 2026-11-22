@@ -1,17 +1,17 @@
 
-# Sistema Integral de Gestión de Clientes, Servicios y Reservas - Software FJ
+ Sistema Integral de Gestión de Clientes, Servicios y Reservas - Software FJ
 
-## Descripción del proyecto
+Descripción del proyecto
 
 Este proyecto consiste en el desarrollo de un sistema integral de gestión de clientes, servicios y reservas para la empresa Software FJ, utilizando el lenguaje de programación Python.
 
-El sistema permite registrar y administrar clientes, gestionar diferentes tipos de servicios y crear, confirmar, cancelar y procesar reservas.
+El sistema permite registrar y administrar clientes, gestionar diferentes tipos de servicios y crear, confirmar, cancelar y procesar reservas, mediante una estructura basada en programación orientada a objetos.
 
-## Objetivo
+Objetivo
 
 Implementar una solución basada en programación orientada a objetos que permita administrar la información mediante clases, objetos, validaciones y manejo de excepciones, garantizando una gestión organizada y robusta de las operaciones.
 
-## Funcionalidades principales
+Funcionalidades principales
 
 - Registro y validación de clientes.
 - Administración de servicios especializados.
@@ -22,7 +22,7 @@ Implementar una solución basada en programación orientada a objetos que permit
 - Manejo de excepciones personalizadas.
 - Registro de eventos y errores en archivos de log.
 
-## Conceptos de programación utilizados
+Conceptos de programación utilizados
 
 - Programación orientada a objetos.
 - Abstracción.
@@ -34,25 +34,25 @@ Implementar una solución basada en programación orientada a objetos que permit
 - Manejo avanzado de excepciones.
 - Registro de eventos y errores.
 
-## Estructura del proyecto
+Estructura del proyecto
 
-- `main.py`: ejecuta el programa y las operaciones de prueba.
-- `entidades.py`: contiene la clase abstracta Entidad.
-- `clientes.py`: administra los datos y validaciones de los clientes.
-- `servicios.py`: contiene la clase abstracta Servicio y los servicios especializados.
-- `reservas.py`: administra las reservas de clientes y servicios.
-- `excepciones.py`: define las excepciones personalizadas.
-- `registro_logs.py`: configura el registro de eventos y errores.
-- `sistema.py`: integra y administra las operaciones del sistema.
+- main.py: ejecuta el programa y las operaciones de prueba.
+- entidades.py: contiene la clase abstracta Entidad.
+- clientes.py: administra los datos y validaciones de los clientes.
+- servicios.py: contiene la clase abstracta Servicio y los servicios especializados (ReservaSala,AlquilerEqipo y AsesoriaEspecialzada)
+- reservas.py: administra las reservas de clientes y servicios.
+- excepciones.py: define las excepciones personalizadas.
+- registro_logs.py: configura el registro de eventos y errores.
+- sistema.py: integra y administra las operaciones del sistema.
+- logs/sistema.log: almacena los registros de eventos y errores generaods durante la ejecución.
 
-## Ejecución del programa
+ Ejecución del programa
 
-Para ejecutar el sistema, se debe contar con Python instalado y ejecutar el archivo principal:
+Para ejecutar el sistema, se debe contar con Python instalado y ejecutar el archivo principal desde la terminal,ubicandose previamente en la carpeta del proyecto:
 
-```bash
 python main.py
-```
 
-Los registros de eventos y errores se almacenan automáticamente en la carpeta `logs`, dentro del archivo `sistema.log`.
+
+Los registros de eventos y errores se almacenan automáticamente en la carpeta logs, dentro del archivo sistema.log.
 
 

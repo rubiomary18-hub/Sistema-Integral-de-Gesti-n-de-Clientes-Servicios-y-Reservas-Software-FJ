@@ -75,18 +75,18 @@ class SistemaGestion:
 
             if id_cliente is not None:
                 for cliente in self._clientes:
-                   if cliente.id_entidad == str(id_cliente).strip():
-    registrar_evento(f"Cliente encontrado: {cliente.id_entidad} - {cliente.nombre}.")
-    return cliente
-
+                    if cliente.id_entidad == str(id_cliente).strip():
+                        registrar_evento(f"Cliente encontrado: {cliente.id_entidad} - {cliente.nombre}.")
+                        return cliente
             else:
                 if not isinstance(correo, str) or not correo.strip():
                     raise DatosInvalidosError("El correo proporcionado no es válido.")
 
                 for cliente in self._clientes:
                     if cliente.correo == correo.strip().lower():
-    registrar_evento(f"Cliente encontrado mediante correo: {cliente.correo}.")
-    return cliente
+                        registrar_evento(f"Cliente encontrado mediante correo: {cliente.correo}.")
+                        return cliente
+
             raise ClienteNoEncontradoError("No se encontró un cliente con los datos proporcionados.")
 
         except Exception as error:
@@ -135,8 +135,8 @@ class SistemaGestion:
             if id_servicio is not None:
                 for servicio in self._servicios:
                     if servicio.id_entidad == str(id_servicio).strip():
-    registrar_evento(f"Servicio encontrado: {servicio.id_entidad} - {servicio.nombre}.")
-    return servicio
+                        registrar_evento(f"Servicio encontrado: {servicio.id_entidad} - {servicio.nombre}.")
+                        return servicio
 
             else:
                 if not isinstance(nombre, str) or not nombre.strip():
@@ -144,14 +144,15 @@ class SistemaGestion:
 
                 for servicio in self._servicios:
                     if servicio.nombre.lower() == nombre.strip().lower():
-    registrar_evento(f"Servicio encontrado mediante nombre: {servicio.nombre}.")
-    return servicio
+                        registrar_evento(f"Servicio encontrado mediante nombre: {servicio.nombre}.")
+                        return servicio
 
             raise ServicioNoDisponibleError("No se encontró el servicio solicitado.")
 
         except Exception as error:
             registrar_error("Error durante la búsqueda de un servicio", error)
             raise
+
 
     # -----------------------------------------
     # CREAR RESERVAS
