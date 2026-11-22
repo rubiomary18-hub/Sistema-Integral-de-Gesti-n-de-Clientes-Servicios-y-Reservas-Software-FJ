@@ -1,9 +1,9 @@
 
-"""
-Archivo: sistema.py
 
-Este módulo administra los clientes, servicios y reservas mediante listas y controla las operaciones del sistema.
-"""
+#Archivo: sistema.py
+
+#Este módulo administra los clientes, servicios y reservas mediante listas y controla las operaciones del sistema.
+
 
 # Importamos las clases principales.
 from clientes import Cliente
@@ -18,14 +18,14 @@ from registro_logs import registrar_evento, registrar_error
 
 
 class SistemaGestion:
-    """
-    Clase principal encargada de administrar el sistema Software FJ.
-    """
+    
+    #Clase principal encargada de administrar el sistema Software FJ.
+    
 
     def __init__(self):
-        """
-        Inicializa las listas donde se almacenarán los objetos.
-        """
+        
+        #Inicializa las listas donde se almacenarán los objetos.
+        
 
         # Listas para almacenar los clientes, servicios y reservas.
         self._clientes = []
@@ -39,9 +39,9 @@ class SistemaGestion:
     # -----------------------------------------
 
     def registrar_cliente(self, cliente):
-        """
-        Registra un cliente después de validar sus datos.
-        """
+        
+        #Registra un cliente después de validar sus datos.
+        
 
         try:
             if not isinstance(cliente, Cliente):
@@ -65,9 +65,9 @@ class SistemaGestion:
     # -----------------------------------------
 
     def buscar_cliente(self, id_cliente=None, correo=None):
-        """
-        Busca un cliente por identificador o por correo electrónico permitiendo dos formas de búsqueda mediante parámetros opcionales.
-        """
+        
+        #Busca un cliente por identificador o por correo electrónico permitiendo dos formas de búsqueda mediante parámetros opcionales.
+        
 
         try:
             if (id_cliente is None and correo is None) or (id_cliente is not None and correo is not None):
@@ -98,9 +98,9 @@ class SistemaGestion:
     # -----------------------------------------
 
     def registrar_servicio(self, servicio):
-        """
-        Registra un servicio especializado en el sistema.
-        """
+        
+        #Registra un servicio especializado en el sistema.
+        
 
         try:
             if not isinstance(servicio, Servicio):
@@ -124,9 +124,9 @@ class SistemaGestion:
     # -----------------------------------------
 
     def buscar_servicio(self, id_servicio=None, nombre=None):
-        """
-        Busca un servicio por identificador o por nombre.
-        """
+        
+        #Busca un servicio por identificador o por nombre.
+        
 
         try:
             if (id_servicio is None and nombre is None) or (id_servicio is not None and nombre is not None):
@@ -159,9 +159,9 @@ class SistemaGestion:
     # -----------------------------------------
 
     def crear_reserva(self, id_reserva, id_cliente, id_servicio, duracion):
-        """
-        Crea una reserva asociando un cliente con un servicio.
-        """
+        
+        #Crea una reserva asociando un cliente con un servicio.
+        
 
         try:
             if any(r.id_entidad == str(id_reserva).strip() for r in self._reservas):
@@ -187,9 +187,9 @@ class SistemaGestion:
     # -----------------------------------------
 
     def buscar_reserva(self, id_reserva):
-        """
-        Busca una reserva mediante su identificador.
-        """
+        
+        #Busca una reserva mediante su identificador.
+        
 
         try:
             for reserva in self._reservas:
@@ -207,9 +207,9 @@ class SistemaGestion:
     # -----------------------------------------
 
     def listar_clientes(self):
-        """
-        Devuelve la lista de clientes registrados.
-        """
+        
+        #Devuelve la lista de clientes registrados.
+        
 
         return self._clientes.copy()
 
@@ -218,9 +218,9 @@ class SistemaGestion:
     # -----------------------------------------
 
     def listar_servicios(self):
-        """
-        Devuelve la lista de servicios registrados.
-        """
+        
+        #Devuelve la lista de servicios registrados.
+        
 
         return self._servicios.copy()
 
@@ -229,8 +229,8 @@ class SistemaGestion:
     # -----------------------------------------
 
     def listar_reservas(self):
-        """
-        Devuelve la lista de reservas registradas.
-        """
+        
+        #Devuelve la lista de reservas registradas.
+        
 
         return self._reservas.copy()
