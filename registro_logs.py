@@ -61,10 +61,9 @@ if not logger.handlers:
 # -----------------------------------------
 
 def registrar_evento(mensaje):
-    """
-    Registra los eventos importantes del sistema.
-    """
-
+    
+    #Registra los eventos importantes del sistema.
+    
     logger.info(mensaje)
 
 # -----------------------------------------
@@ -72,10 +71,9 @@ def registrar_evento(mensaje):
 # -----------------------------------------
 
 def registrar_error(mensaje, error=None):
-    """
-    Registra los errores que ocurren durante las operaciones.
-    """
-
+    
+    #Registra los errores que ocurren durante las operaciones.
+    
     if error is not None:
         logger.error(f"{mensaje}: {error}", exc_info=(type(error), error, error.__traceback__))
     else:

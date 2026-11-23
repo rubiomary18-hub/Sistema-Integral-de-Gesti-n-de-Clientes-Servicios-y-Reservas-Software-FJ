@@ -218,4 +218,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-!logs/sistema.log
+# Archivos de registro del sistema
+logs/
